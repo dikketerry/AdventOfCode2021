@@ -30,13 +30,13 @@ public class Run {
         try (BufferedReader br =
                      new BufferedReader((new InputStreamReader(ClassLoader.getSystemResourceAsStream(fileName))))) {
             return br.lines().collect(toList());
-        } catch (IOException ioe) {
-            throw new UncheckedIOException(ioe);
+        } catch (IOException e) {
+            throw new UncheckedIOException(e); // TODO: solve this differently?
         }
     }
 
     public static void main(String[] args) {
-        int day = 1;
+        int day = 2;
         if(args.length != 0) {
             day = Integer.parseInt(args[0]);
         }
@@ -46,7 +46,13 @@ public class Run {
             part = Integer.parseInt(args[1]);
         }
 
-        List<String> input = loadInput(day);
+        List<String> input = null;
+        try {
+            input = loadInput(day);
+        } catch (UncheckedIOException e) {
+            System.out.println("unchecked exception while loading / reading " +
+                                       "resources");
+        }
 
         String result;
         if (part == 1) {
