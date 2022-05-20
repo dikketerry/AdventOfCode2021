@@ -43,7 +43,7 @@ public class Run {
             day = Integer.parseInt(args[0]);
         }
 
-        int part = 1;
+        int part = 2;
         if(args.length > 1) {
             part = Integer.parseInt(args[1]);
         }
