@@ -2,6 +2,7 @@ package io.eho.adventofcode2021;
 
 import io.eho.adventofcode2021.days.Day01;
 import io.eho.adventofcode2021.days.Day02;
+import io.eho.adventofcode2021.days.Day03;
 
 import java.io.*;
 import java.util.HashMap;
@@ -18,6 +19,7 @@ public class Run {
         DAYS = new HashMap<>();
         DAYS.put(1, new Day01());
         DAYS.put(2, new Day02());
+        DAYS.put(3, new Day03());
     }
 
     public static List<String> loadInput(int day) {
@@ -36,12 +38,12 @@ public class Run {
     }
 
     public static void main(String[] args) {
-        int day = 2;
+        int day = 3;
         if(args.length != 0) {
             day = Integer.parseInt(args[0]);
         }
 
-        int part = 2;
+        int part = 1;
         if(args.length > 1) {
             part = Integer.parseInt(args[1]);
         }
